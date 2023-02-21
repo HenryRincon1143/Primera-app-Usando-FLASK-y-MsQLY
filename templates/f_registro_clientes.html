@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Registro Usuarios</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='Bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='stylos.css/f_registro.css')}}">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark "> <!--navbar-expand-lg sirve para ocultar el botton de menu, navbar-dark bg-dark sirve para darle color-->
+            <div class="container"> <!--centramos nuestro menu de navegacion-->
+                <a href="/"><img src="{{url_for('static', filename='img/logo_principal_sin_fondo.png')}}" width="200" alt="logo principal"></a>
+                
+                <div class="container_enlace col "> <!--col sirve para ajustar la colluna de forma automatica -->
+                    <ul class="navbar-nav me-auto">
+                     <li class="nav-item"><a href="/"class="nav-link">Inicio</a></li>
+                     <li class="nav-item"><a href="/#conocenos"class="nav-link">Contactenos</a></li><!-- "/#conocenos"el / hace referencia a la paguina principal y el #conoceno es el nombre del ancla que usamos para ir de una paguina a otra-->
+                    </ul> 
+                 </div>
+                     
+            </div>
+        </nav >
+    </header>
+    
+    <section>
+
+        <form action="/add_registro_cliente" method ="POST"> 
+
+            <div class="container mt-4">
+                <div class="row">
+                <div class="col-md-12">
+                        <h1 class="h1">Registrese</h1>
+                        <p class="p1"> Apreciado Cliente Por favor llenar todos los campos asi no tendra problema con el registro</p>       
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contenedor_cajas container">
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" placeholder="Nombres"required name="nombres">
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" placeholder="Apellidos"required name="apellidos">
+                        </div>
+
+                        <div class="col-md-3">
+                            <select class="form-control" required name="op">
+                                <option selected>Tipo de Documento</option>
+                                <option>Cedula nacional</option>
+                                <option>Cedula Extranjera</option>
+                                <option>Tarjeta de Identidad</option>
+                                <option>Pasaporte</option>
+                                <option>Contraseña</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" placeholder="Numero Documento" required name="documento">
+                        </div>
+
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" placeholder="Numero celular"required name="celular">
+                        </div>
+
+                        <div class="col-md-3">
+                            <input type="email" class="form-control" placeholder="Correo electronico"required name="correo">
+                        </div>
+
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" placeholder="Usuario" required name="usuario">
+                        </div>
+
+                        <div class="col-md-3">
+                        <input type="password" class="form-control" placeholder="Password" required name="clave">
+                        </div>
+
+                        <div class="form-check col-md-3 mx-3">
+                            <input class="form-check-input" type="checkbox" id="check_opciones" required name="check">
+                            <label class="form-check-label" for="check_opciones">Aceptar Terminos y Condiciones</label>
+                        </div>
+
+                        <div class="ocultar col-md-3">
+                            <select class="form-control" required name="tipo">
+                                <option value="3" selected>cliente</option>
+                            </select>
+                        </div>
+
+                </div>
+            </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="contenedor_btn col-ms-4"> 
+                                <button type="submit" class="btn btn-outline-primary">Crear mi Cuenta</button>
+                            </div>
+                        </div>
+                    </div>
+        
+        </form>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="contenedor_img col-lg-12">
+                    <a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZXMifQ%3D%3D%22%7D">
+                        <img src="{{url_for('static', filename='img/gorjeo.png')}}" alt="twiter" width="40"><!--twiter-->
+                    </a>
+                    <a href="https://www.instagram.com/invites/contact/?i=1lg0sj180s0w3&utm_content=q1o5w80">
+                        <img src="{{url_for('static', filename='img/instagram.png')}}" alt="instagram" width="40">
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100087612881649">
+                        <img src="{{url_for('static', filename='img/facebook.png')}}" alt="facebook" width="40">
+                    </a>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+</section>
+
+</body>
+</html>

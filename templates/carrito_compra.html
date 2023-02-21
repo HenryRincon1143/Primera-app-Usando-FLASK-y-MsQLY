@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de compra</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='Bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='stylos.css/carrito_compra.css')}}">
+
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark "> <!--navbar-expand-lg sirve para ocultar el botton de menu, navbar-dark bg-dark sirve para darle color-->
+        <div class="container"> <!--centramos nuestro menu de navegacion-->
+            <a href="/"><img src="{{url_for('static',filename='img/logo_principal_sin_fondo.png')}}" width="200" alt="logo principal"></a>
+            
+            <div class="container_enlace col "> <!--col sirve para ajustar la colluna de forma automatica -->
+                <ul class="navbar-nav me-auto">
+                 <li class="nav-item"><a href="/"class="nav-link">Inicio</a></li>
+                 <li class="nav-item"><a href="/#conocenos"class="nav-link">Contactenos</a></li>
+                </ul> 
+             </div>
+                 
+        </div>
+    </nav >
+</header>
+
+<section>
+    <div class="container mt-5">
+        <div class="row ">
+            <div class="col-lg-12">
+                <div class="border-bottom">
+                    <h3 >Carrito de Compra</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-6 mt-3">
+                <table class="table table-hover table-bordered text-center"><!--table-bordered este estilo sirve para trasarle lines a la tabla-->
+                    <tr class="border-bottom">
+                        <th>IMAGEN</th>
+                        <th>CODIGO</th>
+                        <th>NOMBRE</th>
+                        <th>PRECIO UNITARIO</th>
+                        <th>CANTIDAD</th>
+                        <th>PRECIO POR CANTIDAD</th>
+                        <Th>IVA</Th>
+                        <th>SUBTOTAL</th>
+                        <th>ACCIONES</th>
+                    </tr>
+                    <tr>
+                        <td><img src="" alt="" width=""></td>
+                        <td>001</td>
+                        <td>Lenovo E-440</td>
+                        <td>$</td>
+                        <td>?</td>
+                        <td>$</td>
+                        <td>$</td>
+                        <td>$</td>
+                        <td>
+                            <section>
+                                <div class="row">
+                                    <div class="col-lg-12 m-auto">
+                                    <button class="btn_eliminar btn btn-md btn-danger">Eliminar</button>   
+                                </div>
+                            </section>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+</section>
+    <section class="section_estadisticas">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-lg-2 col-md-4 col-sm-4">
+                    <p>TOTAL IVA:</p>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-4">
+                    <p>$</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-4 col-sm-4">
+                    <p>TOTAL SUB TOTAL:</p>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-4">
+                    <p>$</p>
+                </div>
+            </div>
+        </div>   
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-4 col-sm-4">
+                    <p>TOTAL:</p>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-4">
+                    <p>$</p>
+                </div>
+            </div>
+        </div>      
+    </section>
+    <section>
+        <div class="container">
+            <div class="row mt-4">
+                <div class="col-lg-3 col-md-4 col-sm-4">
+                    <h2>TOTAL A PAGAR:</h2>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <h3>$</h3>
+                </div>
+                
+                <div class="col-lg-2">
+                    <button class="btn_seguir btn btn-md btn-primary">Seguir Comprando</button>
+                </div>
+                <div class="col-lg-2">
+                    <button class="btn_comprar btn btn btn-success"> Realizar compra
+                </div>
+            </div>
+        </div>
+    </section>
+<script src="{{url_for('static',filename='Bootstrap/js/bootstrap.bundle.min.js')}}"></script> <!--instanciamos los Stylos de Bootstrap Para las animaciones-->
+ 
+<body>  
+</body>
+</html>

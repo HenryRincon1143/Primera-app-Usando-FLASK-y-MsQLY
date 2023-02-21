@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: rgba(192, 173, 173, 0.24);
+    font-family:sans-serif; 
+ }
+/*editamos la parte de los enlaces principales*/
+header nav .container_enlace a{
+    color: #fff;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 17px;
+}
+header nav .container_enlace a:hover{
+    text-decoration: underline;
+    /*hasta aqui editamos los enlaces*/
+}
+/*editamos la parte del parrado  que dice crud productos*/
+section .contenedor_p{
+    font-size: 17px;
+    font-weight: 400
+/*hasta aqui editamos el parrafo*/
+}
+/*editamos los encabezdos de la tabla*/
+section table tr th{
+    font-size:14px;
+    font-weight:600
+   /*hasta aqui editamos el los encabezados*/ 
+}
+/*editamos el contendido de la tabla*/
+section table tr td{
+    font-size:13px
+/*hasta aqui editamos el contenido de la tabla*/ 
+}
+
+@media screen and (max-width:1204px)
+{
+    header nav .container_enlace a{
+        color: #fff;
+        margin-left: 10px;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    h2, h3 {
+        font-size:19px
+    }
+    section table tr td .btn_eliminar {
+        font-size:10px;
+    }
+    section table tr th{
+        font-size:12px;
+    }
+    section table tr td{
+        font-size:11px
+    }
+    section div .btn_seguir{
+        font-size:13px;
+    }
+    section div .btn_comprar{
+        font-size:13px;
+    }
+
+    @media screen and (max-width:1000px)
+    {
+        section table tr td .btn_eliminar {
+          padding-left: 18px;
+        }
+        section div .btn_seguir{
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+        section div .btn_comprar{
+          padding: 7px 20px;
+        }
+    }
+}

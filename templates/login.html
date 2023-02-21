@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='stylos.css/estilos_login.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>HJAS software</title>
+</head>
+
+<body>
+
+     <div class="login">
+        <a href="/">
+            <img class="logo" src="{{url_for('static',filename='img/logo.png')}}" alt="logo">
+        </a>
+        <!--logo de la tienda-->
+        <h1>Login</h1>
+
+         <form class="login_font" action="/login" method="POST">
+            <!--usuario-->
+            <div class="usuario">
+                <label for="usuario">Usuario</label>
+                <input id="usuario" type="text" placeholder="ingresar usuario" required name="usuario">
+            </div>
+
+            <!--cotraseña-->
+            <div class="contrseña">
+                <label for="password">Contraseña</label>
+                <input id="password" type="password" placeholder="ingresar contraseña" required name="clave">
+            </div>
+            
+            <!--Iniciar sesiónn y olvide contraseña-->
+            <button  id="iniciar" required>Iniciar sesión </button>
+            <br><br>
+            <a href="/add_registro_usuario">Registrarse</a><br>
+            <a href="/recuperar_clave">¿Olvide contraseña?</a>
+        </form>
+    </div>
+    <script src="{{url_for('static',filename='js/cod.js')}}"></script>
+</body>
+
+</html>

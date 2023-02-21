@@ -1,0 +1,96 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+   background: rgba(192, 173, 173, 0.24);
+   font-family:sans-serif; 
+}
+/*ajustamos de tamaño la fuente y color a la barra de navegacion*/
+header nav .contenedor_ul li a {
+    color:#fff;
+    font-size:17px
+}
+header nav .contenedor_ul .dropdown-menu{
+    background: rgba(0, 0, 0, 0.83);
+}
+header nav .contenedor_ul .dropdown-menu li a {
+    font-size:15px;
+/*Hasta aqui editamos la barra de navegacion*/
+}
+main section .border-bottom h1{
+    font-size:35px;
+}
+/*modificamos el tamaño de todas las imagenes que estan en las card*/
+main section .card a .card-img-top{
+    width: 220px;    
+}
+/*Recortamos espacios entre el titutlo de la tarjeta y la imagen*/
+main section .card-body {
+padding-top: 1px;
+}
+/*modificamos el nombre de los productos y la breve descripcion*/
+main section .card-body a{
+    text-decoration: none;
+    color:rgba(0, 0, 0, 0.577);
+    text-align: center;
+} 
+main section .card-body div {
+    color: #fff;
+    text-align: center;  
+}
+main .carrusel_formas_de_pago{
+    margin-top:60px;
+}
+/*modificamos la parte de los anuncios de seguridad y compra*/
+main section .contenedor_anuncios{
+    padding: 30px 0;
+    border-radius: 10px;
+}
+main section .contenedor_anuncios h3{
+    color: rgb(236, 90, 38);
+    font-size: 25px; 
+    font-weight:300;   
+}
+main section .contenedor_anuncios p{
+    color:rgba(0, 0, 0, 0.769);
+    font-size: 15px;
+    font-weight: 300;
+}
+/*Modificamos la section del footer*/
+footer {
+    background: rgb(28, 27, 27);
+}
+footer .section_footer{
+    padding-bottom: 30px;
+}
+footer .contenedor_footer2 div{
+    margin-top: 20px;
+}
+footer section div .contenedor_p1 p{
+    text-align: justify;
+}
+footer .contenedor_footer2 .contenedor_ubicacion{
+    margin: 12px 0;
+}
+footer .contenedor_footer2 div h5{
+    margin-bottom: 30px;
+    color: #fff;
+}
+footer .contenedor_footer2 div p{
+    color: rgba(255, 255, 255, 0.599);
+    text-align: center;
+    margin-bottom: 5px;
+/*hasta aqui modificamos la parte del footer*/
+}
+footer .contenedor_pie{
+    background: #000;
+    color: #fff;
+}
+footer .contenedor_pie div p{
+    margin-top: 60px;
+    text-align: center;
+}
+
+
+

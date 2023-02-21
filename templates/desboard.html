@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='stylos.css/desboard.css')}}">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+
+</head>
+<body>
+    <section id="menu">
+        <div class="logo">
+      
+            <img src="{{ url_for('static', filename='img/logo.png')}}"alt="logo">
+                 
+            <h2>Hola Super Administrador</h2>
+        </div>
+        <div class="navegacion">
+            <li><i class="fas fa-plus"></i><a href="/crud_productos">Producto</a></li>
+            <li><i class="fas fa-plus"></i><a href="/crud_trabajadores">Administrador</a></li>
+            <li><i class="fas fa-sign-out-alt"></i><a href="/login">Cerrar Secionr</a></li>
+        </div>
+    </section>
+
+
+    <section id="interfas">
+        <div class="navAdmin">
+            <div class="n1">
+                <div class="busqueda">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="busqueda">
+                </div>
+            </div>
+
+            <div class="perfil">
+                <i class="fas fa-bell"></i>
+                <img src="{{ url_for('static', filename='img/admin.jpg')}}"alt="admin">
+            </div>
+        </div>
+
+        <h3 class="i-nombre">Super Administrador</h3>
+
+
+        <div class="valores">
+            <div class="val-box">
+                <i class="fas fa-users"></i>
+                <div>
+                    <h3>8,267</h3>
+                    <span>Numero de Usuariso</span>
+                </div>
+            </div>
+
+            <div class="val-box">
+                <i class="fas fa-shopping-cart"></i>
+                <div>
+                    <h3>200,521</h3>
+                    <span>Total pedido</span>
+                </div>
+            </div>
+
+            <div class="val-box">
+                <i class="fas fa-tv"></i>
+                <div>
+                    <h3>215,679</h3>
+                    <span>producto a vender</span>
+                </div>
+            </div>
+
+            <div class="val-box">
+                <i class="fas fa-dollar-sign"></i>
+                <div>
+                    <h3>$8.588.373</h3>
+                    <span>ventas del mes</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="producto">
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <td>Producto</td>
+                        <td>Codigo</td>
+                        <td>Presio</td>
+                        <td>Cantidad</td>
+                        <td>Catalogo</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Celulares -->
+                    <tr>
+                        <td class="proDucto">
+                           
+                            <img src="{{ url_for('static', filename='img/img_digital/celulares/motorolag31.jpg')}}"alt="celular">
+                        
+                        <div class="proDucto-de"><h5>motorola g31</h5></div></td>
+
+                        <td class="proDucto-codigo"><p>1234567</p></td>
+
+                        <td class="proDucto-des"><h5>$250</h5></td>
+
+                        <td class="proDucto-cantidad"><p>30</p></td>
+
+                        <td class="ProDucto-catalogo"><p>Celulares</p></td>
+                    </tr>
+                    <tr>
+                        <td class="proDucto">
+                
+                            <img src="{{ url_for('static', filename='img/img_digital/celulares/motorolag42.jpg')}}" alt="motorola">
+                        
+                        <div class="proDucto-de"><h5>motorola g42</h5></div></td>
+
+                        <td class="proDucto-codigo"><p>25252525</p></td>
+
+                        <td class="proDucto-des"><h5>$250</h5></td>
+
+                        <td class="proDucto-cantidad"><p>30</p></td>
+
+                        <td class="ProDucto-catalogo"><p>Celulares</p></td>
+                    </tr>
+
+                    <!-- Conputado -->
+                    <tr>
+                        <td class="proDucto">
+
+                            <img src="{{ url_for('static', filename='img/img_digital/computadores/computador1.jpg')}}" alt="computador">
+                        
+                            
+                        <div class="proDucto-de"><h5>Asus14</h5></div></td>
+
+                        <td class="proDucto-codigo"><p>636370</p></td>
+
+                        <td class="proDucto-des"><h5>$450</h5></td>
+
+                        <td class="proDucto-cantidad"><p>7</p></td>
+
+                        <td class="ProDucto-catalogo"><p>Conputado</p></td>
+                    </tr>
+                    <tr>
+                        <td class="proDucto">
+                        
+                            <img src="{{ url_for('static', filename='img/img_digital/computadores/portatil2.jpg')}}" alt="computador">
+                            
+                        <div class="proDucto-de"><h5>Asus TF</h5></div></td>
+
+                        <td class="proDucto-codigo"><p>636330</p></td>
+
+                        <td class="proDucto-des"><h5>$450</h5></td>
+
+                        <td class="proDucto-cantidad"><p>7</p></td>
+
+                        <td class="ProDucto-catalogo"><p>Conputado</p></td>
+                    </tr>
+
+                    <!-- consolas -->
+                    <tr>
+                        <td class="proDucto">
+
+                            <img src="{{ url_for('static', filename='img/img_digital/consolas/ps5.jpg')}}" alt="consolas">
+                          
+                        <div class="proDucto-de"><h5>ps5</h5></div></td>
+
+                        <td class="proDucto-codigo"><p>376723</p></td>
+
+                        <td class="proDucto-des"><h5>$550</h5></td>
+
+                        <td class="proDucto-cantidad"><p>50</p></td>
+
+                        <td class="ProDucto-catalogo"><p>Consola</p></td>
+                    </tr>
+                    <tr>
+                        <td class="proDucto">
+                    
+                            <img src="{{ url_for('static', filename='img/img_digital/consolas/xboxseriexS.jpg')}}" alt="consolas">
+                          
+                        <div class="proDucto-de"><h5>XBOX serie s</h5></div></td>
+
+                        <td class="proDucto-codigo"><p>234567</p></td>
+
+                        <td class="proDucto-des"><h5>$550</h5></td>
+
+                        <td class="proDucto-cantidad"><p>50</p></td>
+
+                        <td class="ProDucto-catalogo"><p>Consola</p></td>
+                    </tr>
+                    
+                    <!-- TV -->
+                    <tr>
+                        <td class="proDucto">
+                  
+                            <img src="{{ url_for('static', filename='img/img_digital/televisor/sony.jpg')}}" alt="televisores">
+
+                        <div class="proDucto-de"><h5>SONY</h5></div></td>
+
+                        <td class="proDucto-codigo"><p>376663</p></td>
+
+                        <td class="proDucto-des"><h5>$500</h5></td>
+
+                        <td class="proDucto-cantidad"><p>60</p></td>
+
+                        <td class="ProDucto-catalogo"><p>televisores</p></td>
+                        <tr>
+                            <td class="proDucto">
+                      
+                                <img src="{{ url_for('static', filename='img/img_digital/televisores/samsung.jpg')}}" alt="televisor">
+                     
+                            <div class="proDucto-de"><h5>samsung</h5></div></td>
+    
+                            <td class="proDucto-codigo"><p>376493</p></td>
+    
+                            <td class="proDucto-des"><h5>$500</h5></td>
+    
+                            <td class="proDucto-cantidad"><p>50</p></td>
+    
+                            <td class="ProDucto-catalogo"><p>televisores</p></td>
+                        </tr>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+
+
+</body>
+</html>

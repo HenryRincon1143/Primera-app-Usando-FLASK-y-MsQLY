@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: rgba(192, 173, 173, 0.24);
+    font-family:sans-serif; 
+ }
+/*editamos la parte de los enlaces principales*/
+header nav .container_enlace a{
+    color: #fff;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 17px;
+}
+header nav .container_enlace a:hover{
+    text-decoration: underline;
+    /*hasta aqui editamos los enlaces*/
+}
+/*editamos la parte del parrado  que dice crud productos*/
+section .contenedor_p{
+    font-size: 17px;
+    font-weight: 400
+/*hasta aqui editamos el parrafo*/
+}
+
+section .contenedor_p button a{
+    text-decoration: none;
+    color: #fff;
+}
+/*editamos los encabezdos de la tabla*/
+section table tr th{
+    font-size:12px;
+    font-weight:600
+   /*hasta aqui editamos el los encabezados*/ 
+}
+/*editamos el contendido de la tabla*/
+section table tr td{
+    font-size:13px
+/*hasta aqui editamos el contenido de la tabla*/ 
+}
+section table td section button a {
+text-decoration: none;
+color: #fff;
+}
+/*editamos el los botones de la tabla*/
+    section table tr td .btn_editar{
+    padding: 6px 20px;
+}
+@media screen and (max-width:1200px)
+{
+    header nav .container_enlace a{
+        color: #fff;
+        margin-left: 10px;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    h3{
+        font-size:20px
+    }
+    section .btn_agregar{
+        font-size:12px ;
+    }
+    section table tr td .btn_editar {
+        font-size:10px ;
+    }
+    section table tr td .btn_eliminar {
+        font-size:10px;
+    }
+    section table tr th{
+        font-size:12px;
+    }
+    section table tr td{
+        font-size:11px
+    }
+    @media screen and (max-width:1000px)
+    {
+        section table tr td .btn_editar {
+          margin-bottom: 2px;
+        }
+        section table tr td .btn_eliminar {
+          padding-left: 18px;
+        }
+}
+}
+
+
+
+
+
+

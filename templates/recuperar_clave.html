@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='stylos.css/estilos_login.css')}}">
+    <title>recuperar contraseña</title>
+</head>
+
+<body>
+    <div class="login_OL">
+        <a href="/">
+            <img class="logo" src="{{url_for('static',filename='img/logo.png')}}" alt="logo">
+        </a>
+        <!--logo de la tienda-->
+        <h1>Recuperar contraseña</h1>
+        <form>
+            <!--correo-->
+            <label for="usuario">Ingrese su correo</label>
+            <input type="email" placeholder="Ingrese su correo">
+
+            <!--contraseña-->
+            <label for="password">ingrese contraseña</label>
+            <input type="password" placeholder="ingrese contraseña">
+
+            <!--confirme contraseña-->
+            <label for="password">confirme contraseña</label>
+            <input type="password" placeholder="confirme contraseña">
+
+            <!--Iniciar sesiónn y olbide contraseña-->
+            <button id="confrimar" required>confirmar contraseña </button>
+        </form>
+    </div>
+</body>
+
+</html>

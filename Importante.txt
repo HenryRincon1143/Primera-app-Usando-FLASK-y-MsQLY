@@ -1,0 +1,4 @@
+Para hacer que esta aplicacion pueda funcionar correctamente se deben
+tener conocimientos de sobre el framework flask,
+en cuanto a su instalacion y puesta en marcha
+junto con las importaciones necesarias.

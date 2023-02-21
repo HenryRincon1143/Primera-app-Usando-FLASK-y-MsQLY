@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi paguina de Comercio Electronico</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Bootstrap/css/bootstrap.min.css')}}"> <!--instanciamos los Stylos de Bootstrap-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylos.css/index.css')}}">
+    <script src="https://kit.fontawesome.com/b956abbec0.js" crossorigin="anonymous"></script> <!--link para traer icono del carrito-->
+</head>
+<body>
+    
+<header>
+    <a name="menu_principal"></a><!--ancla para subir-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!--navbar-expand-lg sirve para ocultar el botton de menu, navbar-dark bg-dark sirve para darle color-->
+            <div class="barra_menu container"> <!--centramos nuestro menu de navegacion-->
+                <a href="/">
+                    <img src="{{ url_for('static', filename='img/logo_principal_sin_fondo.png')}}"width="200"alt="logo">
+                </a>
+                    <button 
+                        class="navbar-toggler" 
+                        type="button"
+                        data-bs-toggle ="collapse"
+                        data-bs-target="#contenidoMenu"
+                        aria-controls="contenidoMenu"
+                        aria-expanded="false"
+                        aria-label="Mostrar/ocultar Navegacion" >
+                        <!--las lines dentro del botton sirven para crear un boton tipo menu, esto es para hacer reponsive la barra de menu-->
+                        <span class="navbar-toggler-icon"> </span>
+                    </button>
+                    <div class="contenedor_ul collapse navbar-collapse" id="contenidoMenu" ><!--con esta linea de codigo ocultamos o colapsamos los textos de la barra de navegacion-->
+                        <ul class="navbar-nav me-auto"> <!--navbar-nav le decimos a los textos de enlaces que seran de tipo barra de navegacion, me-auto tendran un margen automatico -->
+                            <!--Listas-->
+
+                            <li class="nav-item"> <!--enlaces de la paguina-->
+                                <a href="/" class="nav-link">Inicio</a>
+                            </li>
+                            
+                            <li class=" nav-item dropdown"> <!--dropdown-toggle le decimos que el sub menu despliege para abajo-->
+                                <a href="#" 
+                                    class="nav-link dropdown-toggle"
+                                    id ="submenuProductos"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">Productos
+                                </a>
+                                    <!--sub elementos del menu-->
+                                    <ul class="dropdown-menu" aria-labelledby="submenuProductos">
+                                        <li><a href="#computadores" class="dropdown-item"> Computadores</a></li>
+                                        <li><a href="#" class="dropdown-item"> Pantallas</a></li>
+                                        <li><a href="#" class="dropdown-item"> Celulares</a></li>
+                                        <li><a href="#" class="dropdown-item"> Consolas</a></li> 
+                                        <li><a href="#" class="dropdown-item"> Drones</a></li>    
+                                    </ul>
+                            </li>
+
+                                <li class=" nav-item">
+                                    <a href="#conocenos" class="nav-link">Contactenos</a>
+                                </li>
+
+                                <li class=" nav-item">
+                                    <a href="/login" class="nav-link">Iniciar Session</a>
+                                </li>
+                                <li class=" nav-item">
+                                    <a href="/add_registro_cliente" class="nav-link">Registrarse</a>
+                                </li>
+                                <li class=" nav-item">
+                                    <a href="/carrito_compra" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a><!--carrito de compra-->
+                                </li>
+                        </ul>
+                            
+                        <form action="#" class="d-flex"> <!--Formulario de Busqueda  d-flex sirve para que todo se coloque horizontal si esta dentro del formulario-->
+                            <input type="text"
+                            class="form-control me-2"
+                            placeholder="Buscar"> 
+                            <button class="btn btn-outline-light"><img src="{{ url_for('static', filename='img/lupa.png')}}" height="35px"></button>
+                        </form>
+                </div> 
+         </div>  
+    </nav >
+</header>
+
+<main class="my-4"><!--m-5 le decimos a la paguina que tenga margen de 5-->
+    
+        <section > <!--Carousel principal-->
+            <div id="carrusel_principal" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active ">
+                    <img src="{{ url_for('static', filename='img/carusel_3.png')}}" class="d-block" alt="carrusel foto 3">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{ url_for('static', filename='img/carusel_4.png')}}" class="d-block" alt="carrosuel foto 4">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{ url_for('static', filename='img/carusel_5.PNG')}}" alt="d-block" alt="carrusel foto 5">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carrusel_principal" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carrusel_principal" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Siguiente</span>
+                </button>
+              </div>        
+                
+        </section>
+
+        <section class="m-2" ><!--Section de productos lo mas vendido-->
+            <div class="row py-3" > <!--Hacemos referencia a las filas de las cart, py-5 le decimos que tenga un paddin de 5 en el eje de la Y-->
+                <div class="col-md-12">
+                    <div class="border-bottom">
+                        <a name="computadores"></a><!--esta es un ancla para desplazamiento rapido-->
+                        <h1 class="text-center">Lo mas Vendido</h1>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="row">
+                <div class=" col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static', filename='img/img_digital/computadores/portatil5.jpg')}}" alt="foto portatil1"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">Lenovo E440</h3></a>
+                            <a href="#"><p class="card-text">IntelCore 5 generacion</p></a>
+                            <a href="#"><p class="card-text py-2">$ 3.000.000</p></a>
+                            <div>
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static', filename='img/img_digital/televisores/samsung.jpg')}}" alt="foto portatil2"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">Samsung Serie H</h3></a>
+                            <a href="#"><p class="card-text">55 pulgadas pantalla amoled</p></a>
+                            <a href="#"><p class="card-text py-2">$ 5.000.000</p></a>
+                            <div class="col-md-12">
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static',filename='img/img_digital/consolas/xboxnegro.png')}}" alt="foto portatil3"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">Xbox serie E</h3></a>
+                            <a href="#"><p class="card-text">Cuenta con 4 tarjetas graficas de 5BG</p></a>
+                            <a href="#"><p class="card-text py-2">$ 7.000.000</p></a>
+                            <div>
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div>      
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static', filename='img/img_digital/celulares/samsungs21.jpg')}}" alt="foto portatil4"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">Samsung S22 Pro</h3></a>
+                            <a href="#"><p class="card-text">Ram 12GB, almacenamiento 1TB</p></a>
+                            <a href="#"><p class="card-text py-2">$ 5.000.000</p></a>
+                            <div>
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="m-2"><!--Section de productos de compuradores-->
+            <div class="row py-4" > <!--Hacemos referencia a las filas de las cart, py-5 le decimos que tenga un paddin de 5 en el eje de la Y-->
+                <div class="col-md-12">
+                    <div class="border-bottom">
+                        <a name="computadores"></a><!--esta es un anlca para desplazamiento rapido-->
+                        <h1 class="text-center">Computadores</h1>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="row">
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static', filename='img/img_digital/computadores/portatil5.jpg')}}" alt="foto portatil1"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">Lenovo E440</h3></a>
+                            <a href="#"><p class="card-text">IntelCore 5Gen Carga rapida</p></a>
+                            <a href="#"><p class="card-text py-2">$ 4.000.000</p></a>
+                            <div>
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static', filename='img/img_digital/computadores/portatil2.jpg')}}" alt="foto portatil2"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">Lenovo X550</h3></a>
+                            <a href="#"><p class="card-text">Ryzen 3Gen super delgado</p></a>
+                            <a href="#"><p class="card-text py-2">$ 8.000.000</p></a>
+                            <div class="col-md-12">
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static',filename='img/img_digital/computadores/portatil3.jpg')}}" alt="foto portatil3"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">HP Ideapad</h3></a>
+                            <a href="#"><p class="card-text">7Gen, 17" carga rapida</p></a>
+                            <a href="#"><p class="card-text py-2">$ 6.000.000</p></a>
+                            <div>
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div>      
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static', filename='img/img_digital/computadores/portatil4.jpg')}}" alt="foto portatil4"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">Lenovo Workstation</h3></a>
+                            <a href="#"><p class="card-text">Thimkpad 7Gen, 20"</p></a>
+                            <a href="#"><p class="card-text py-2">$ 10.000.000</p></a>
+                            <div>
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="m-2"><!--Section de productos pantallas-->
+            <div class="row py-4" > <!--Hacemos referencia a las filas de las cart, py-5 le decimos que tenga un paddin de 5 en el eje de la Y-->
+                <div class="col-md-12">
+                    <div class="border-bottom">
+                        <a name="computadores"></a><!--esta es un anlca para desplazamiento rapido-->
+                        <h1 class="text-center">Pantallas</h1>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="row">
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static', filename='img/img_digital/televisores/samsung.jpg')}}" alt="foto portatil1"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">Samsung QLED</h3></a>
+                            <a href="#"><p class="card-text">Pantalla plana 32"pulgadas</p></a>
+                            <a href="#"><p class="card-text py-2">$ 1.200.000</p></a>
+                            <div>
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static', filename='img/img_digital/televisores/sony.jpg')}}" alt="foto portatil2"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">Sony 4k</h3></a>
+                            <a href="#"><p class="card-text">patalla plana 75"pulgadas</p></a>
+                            <a href="#"><p class="card-text py-2">$ 6.999.900</p></a>
+                            <div class="col-md-12">
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static',filename='img/img_digital/televisores/hyundai.jpg')}}" alt="foto portatil3"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">Hyundai TV</h3></a>
+                            <a href="#"><p class="card-text">pantalla plana 43"pulgadas</p></a>
+                            <a href="#"><p class="card-text py-2">$ 2.500.000</p></a>
+                            <div>
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div>      
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static', filename='img/img_digital/televisores/lgtelevisor.jpg')}}" alt="foto portatil4"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">LG SMART TV</h3></a>
+                            <a href="#"><p class="card-text">pantalla plana 55"pulgadas</p></a>
+                            <a href="#"><p class="card-text py-2">$ 4.900.000</p></a>
+                            <div>
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        
+        <section class="m-2"><!--Section de celulares-->
+            <div class="row py-4" > <!--Hacemos referencia a las filas de las cart, py-5 le decimos que tenga un paddin de 5 en el eje de la Y-->
+                <div class="col-md-12">
+                    <div class="border-bottom">
+                        <a name="computadores"></a><!--esta es un anlca para desplazamiento rapido-->
+                        <h1 class="text-center">Celulares</h1>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="row">
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static', filename='img/img_digital/celulares/xiaomipocox4.jpg')}}" alt="foto portatil1"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">Xiaomi poco x4</h3></a>
+                            <a href="#"><p class="card-text"></p>poco 256GB/8GB</a>
+                            <a href="#"><p class="card-text py-2">$ 1.499.000</p></a>
+                            <div>
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static', filename='img/img_digital/celulares/samsunga22.jpg')}}" alt="foto portatil2"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">Samsung S10</h3></a>
+                            <a href="#"><p class="card-text">4GB de almacenamiento/camara 20mpx</p></a>
+                            <a href="#"><p class="card-text py-2">$ 2.000.000</p></a>
+                            <div class="col-md-12">
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static',filename='img/img_digital/celulares/motorolag42.jpg')}}" alt="foto portatil3"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">Motorola E</h3></a>
+                            <a href="#"><p class="card-text">camara 20mpx/ 8GB de almacenamiento</p></a>
+                            <a href="#"><p class="card-text py-2">$ 1.000.000</p></a>
+                            <div>
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div>      
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static', filename='img/img_digital/celulares/samsungs21.jpg')}}" alt="foto portatil4"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">Samsung S21</h3></a>
+                            <a href="#"><p class="card-text">camara 20mpx/ bateria de 5mlp</p></a>
+                            <a href="#"><p class="card-text py-2">$ 3.000.000</p></a>
+                            <div>
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="m-2"><!--Section de consolas-->
+            <div class="row py-4" > <!--Hacemos referencia a las filas de las cart, py-5 le decimos que tenga un paddin de 5 en el eje de la Y-->
+                <div class="col-md-12">
+                    <div class="border-bottom">
+                        <a name="computadores"></a><!--esta es un anlca para desplazamiento rapido-->
+                        <h1 class="text-center">Consolas</h1>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="row">
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static', filename='img/img_digital/consolas/ps5.jpg')}}" alt="foto portatil1"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">Play 5</h3></a>
+                            <a href="#"><p class="card-text">Super bueno</p></a>
+                            <a href="#"><p class="card-text py-2">$ 8.000.000</p></a>
+                            <div>
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static', filename='img/img_digital/consolas/nintendolite.jpg')}}" alt="foto portatil2"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">Super nintendo</h3></a>
+                            <a href="#"><p class="card-text">Con tegnologia ahorrador</p></a>
+                            <a href="#"><p class="card-text py-2">$ 1.500.000</p></a>
+                            <div class="col-md-12">
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static',filename='img/img_digital/consolas/nintendoswitch.jpg')}}" alt="foto portatil3"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">Super nintendo 2</h3></a>
+                            <a href="#"><p class="card-text">Con tegnologia ahorradora de energia</p></a>
+                            <a href="#"><p class="card-text py-2">$ 3.000.000</p></a>
+                            <div>
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div>      
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static', filename='img/img_digital/consolas/xboxnegro.png')}}" alt="foto portatil4"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">Super Xbox </h3></a>
+                            <a href="#"><p class="card-text">Con tegnologia ahorradora de energia</p></a>
+                            <a href="#"><p class="card-text py-2">$ 8.000.000</p></a>
+                            <div>
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="m-2"><!--Section de Drones-->
+            <div class="row py-4" > <!--Hacemos referencia a las filas de las cart, py-5 le decimos que tenga un paddin de 5 en el eje de la Y-->
+                <div class="col-md-12">
+                    <div class="border-bottom">
+                        <a name="computadores"></a><!--esta es un anlca para desplazamiento rapido-->
+                        <h1 class="text-center">Drones</h1>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="row">
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static', filename='img/img_digital/drones/dron1.png')}}" alt="foto portatil1"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">Dron DJI Air 2  </h3></a>
+                            <a href="#"><p class="card-text">Bateira de 5 horas </p></a>
+                            <a href="#"><p class="card-text py-2">$ 6.000.000</p></a>
+                            <div>
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static', filename='img/img_digital/drones/dron2.png')}}" alt="foto portatil2"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">Dron DJI mini 3 pro</h3></a>
+                            <a href="#"><p class="card-text">Tiempo maximo de vuelo 1 hora</p></a>
+                            <a href="#"><p class="card-text py-2">$ 9.000.000</p></a>
+                            <div class="col-md-12">
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static',filename='img/img_digital/drones/dron3.png')}}" alt="foto portatil3"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">Dron DJI Tello Blanco</h3></a>
+                            <a href="#"><p class="card-text">Tiempo maximo de vuelo 30 minutos</p></a>
+                            <a href="#"><p class="card-text py-2">$ 6.000.000</p></a>
+                            <div>
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div>      
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3 col-mb-4"> <!--Con estas condiciones le decimos que segun el tamaño de la pantalla se adacte para que la vista sea reponsiva, mb-4 para que tenga un espaciado en la parte de abajo-->
+                    <div class="card text-center">
+                        <a href="#"><img class="card-img-top" src="{{url_for('static', filename='img/img_digital/drones/dron4.png')}}" alt="foto portatil4"></a> <!--card-img-top, este codigo suavisa las esquinas de la imagen-->
+                        <div class="card-body"> <!--este es el contenedor del cuerpo de la card-->
+                            <a href="#"><h3 class="card-title">Dron Start 5</h3></a>
+                            <a href="#"><p class="card-text">Tiempo maximo de vuelo 20 minutos</p></a>
+                            <a href="#"><p class="card-text py-2">$ 3.000.000</p></a>
+                            <div>
+                                <button class="btn btn-sm btn-primary">Añadir al carrito</button><!--btn-sm, queremos que los botones sehan pequeños, btn-primary, le damos colores -->
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="carrusel_formas_de_pago"> <!--carrusel formas de pago-->
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-lg-12">
+                            <div id="carrusel_pagos" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active ">
+                                        <img src="{{url_for('static', filename='img/grupo_pago.PNG')}}" class="d-block  w-100" alt="carrusel formas de pagos 1">
+                                    </div> 
+                                    <div class="carousel-item">
+                                        <img src="{{url_for('static',filename='img/grupo_pago.PNG')}} " class="d-block w-100 " alt="carrusel formas de pagos 1">
+                                    </div>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <section> <!--container mensaje en grupo-->
+            <div class="container">
+                <div class="contenedor_anuncios row my-5 text-center bg-light">
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div>
+                                <img src="{{url_for('static',filename='img/verificar.png')}}" alt="foto compra facil" height="50">
+                            </div>
+                            <h3>Compra facil</h3>
+                            <p>Elije tu producto selecciona el medio de pago, la direccion de entrega y listo. </p>    
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div>
+                                <img src="{{url_for('static', filename='img/envio-gratis.png')}}" alt="foto envio gratis" height="50">
+                            </div>
+                            <h3>Envio gratis</h3>
+                            <p>En compras superiores de 2 millones. </p>  
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div>
+                                <img src="{{url_for('static', filename='img/tiempo-rapido.png')}}" alt="foto envio rapido" height="50">
+                            </div>
+                            <h3>Tu producto rapido</h3>
+                            <p>El tiempo de entrega deprendera de la ciudad en la que te encuentres. </p>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12">
+                            <div>
+                                <img src="{{url_for('static', filename='img/compras-seguras.png')}}" alt="foto compra seguro" height="50">
+                            </div>
+                            <h3>Compra 100% segura </h3>
+                        </div>
+                </div>
+            </div>
+        </section> 
+</main>
+    <!--Pie de la paguina-->
+    <a name="conocenos"></a> <!--esta es un ancla-->
+    <footer class="text-center">
+        <section class="section_footer">
+            <div class="container">
+                <div class="contenedor_footer2 row">
+                    <div class="contenedor_p1 col-md-4">
+                        <!-- Copyright -->
+                            <h5>Mas Informacion sobre la Compañia</h5> 
+                            <p>En H-JAS-software te llevamos a la comodidad de tu hogar las nuevas tecnologías al mejor preciso y con envío gratuito a todos las partes del país,
+                            queremos que nuestros usuarios se sientan cómodos con nuestros productos y precios con métodos fácil y rápido de pago. En que tenga problema con su producto o
+                            no llegue lo que pedio se puede contactar con nuestro servicio técnico o atención al cliente <strong>3032116164.</strong><br>Te llevamos a la comodidad de tu hogar las nuevas tecnologías para formar usuarios eficientes e inspirarte a crear ideas propias "nos gustaría mantenerte ready</p>
+                       
+                    </div>  
+
+                    <div class="col-md-4">
+                        <h5> Redes Sociales</h5>
+
+                         <a class="d-block mt-2" href="https://www.facebook.com/profile.php?id=100087612881649">
+                            <img class="my-2" src="{{url_for('static',filename='img/facebook.png')}}" alt="Facebook" height="50px">
+                        </a> <!-- Facebook -->
+
+                         <a class="d-block m-1" href="https://web.whatsapp.com/">
+                            <img  class="my-2" src="{{url_for('static',filename='img/whatsapp.png')}}" alt="Whatsapp" height="50px">
+                        </a><!--Whatsapp-->          
+
+                         <a class=" d-block m-1" href="https://www.instagram.com/invites/contact/?i=1lg0sj180s0w3&utm_content=q1o5w80">
+                            <img  class="my-2" src="{{url_for('static',filename='img/instagram.png')}}" alt="Instagran" height="50px">
+                        </a><!-- instagran -->
+                         
+                         <a class=" d-block m-1" href="https://github.com/">
+                            <img class="my-2" src="{{url_for('static',filename='img/github.png')}}" alt="Github" height="50px">
+                        </a><!-- Github -->
+                    </div>
+
+                    <div class="contenedor_final col-md-4" >
+                        <h5> Informacion Contacto</h5>
+                            <div class="contenedor_ubicacion">
+                                <img src="{{url_for('static', filename='img/casa.png')}}" width="50" alt="Casita">
+                                <p> Sena sede Tic Colombia - Barranquilla </p>
+                                <p>Sena calle 30 Barranquilla - Colombia</p>
+                            </div>
+                            <div class="contenedor_ubicacion">
+                                <img src="{{url_for('static', filename='img/movil.png')}}" width="50" alt="Telefono">
+                                <p>+57 - 300-585-7897</p>
+                                <p>+57 - 310-585-8914</p>
+                            </div>
+                            <div class="contenedor_ubicacion" >
+                                <img src="{{url_for('static', filename='img/mensaje-recibido.png')}}" width="50" alt="gmail">
+                                <p>h_jas_software@h.jas.com.co</p>
+                                <p>h_jas_barranquilla_software@h.jas.com.co</p>
+                            </div>
+                    </div>
+                </div>
+            </div>  
+        </section>  
+        <section class="contenedor_pie">
+            <div class="container">
+                <div class="row">
+                    <div class="foto_pie col-lg-3 col-md-6 col-sm-12">
+                        <a href="#menu_principal">
+                            <img class="foto_pie" src="{{url_for('static',filename='img/logo_principal_sin_fondo.png')}}" width="300px" alt="logo">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-2 col-sm-12">
+                        <p>@Todos los Derechos Reservados</p>
+                    </div>
+                    <div class="col-lg-3 col-md-2 col-sm-12 " >
+                        <p>Privacidad y Politica</p>
+                    </div>
+                    <div class="col-lg-3 col-md-2 col-sm-12 " >
+                        <p>Terminos y Condiciones</p>
+                    </div>
+                </div>
+            </div>
+        </section>                               
+   </footer>
+    <script src="{{url_for('static',filename='Bootstrap/js/bootstrap.bundle.min.js')}}"></script> <!--instanciamos los Stylos de Bootstrap Para las animaciones-->
+</body>
+</html>

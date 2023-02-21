@@ -1,0 +1,231 @@
+:root{
+    --blanco:#FFFFFF;
+    --gris:#bdbdbd;
+    --azul:#0000FF;
+    --negor:#000000;
+    --negorClaro: #1f2124;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    background: var(--gris);
+    position:relative;
+    display: flex;
+
+}
+#menu{ 
+    background: var(--negorClaro);
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+}
+#menu .logo{
+    display: flex;
+    align-items: center;
+    color:var(--blanco);
+    padding: 30px 0 0 30px;
+}
+#menu .logo img{
+    width: 80px;
+    margin-right: 15px;
+    border-radius: 60px;
+}
+
+#menu .navegacion{
+    margin-top: 40px;
+
+}
+
+#menu .navegacion li{
+    list-style:none;
+    padding: 25px;
+    transition: 0.3s ease;
+}
+#menu .navegacion li:hover{
+    background: var(--negor);
+    cursor: pointer;
+}
+#menu .navegacion li:nth-child(1){
+    border-left: 4px solid var(--blanco);
+}
+
+#menu .navegacion li i{
+    color: var(--gris);
+    width: 30px;
+    height: 20px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    margin: 0 10px 0 25px;
+}
+#menu .navegacion li:hover i,
+#menu .navegacion li:hover a{
+    color: var(--gris);
+}
+#menu .navegacion li a{
+    text-decoration: none;
+    color: var(--gris);
+    font-weight:300px;
+    transition: 0.3s ease;
+}
+
+#interfas{
+    width: calc(100% - 300px);
+    margin-left: 300px;
+    position: relative;
+
+}
+
+#interfas .navAdmin{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background:var(--blanco);
+    padding: 15px 30px;
+    border-bottom:3px solid var(--negor);
+
+}
+#interfas .navAdmin .busqueda{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 14px;
+    border: 1px solid var(--gris);
+    border-radius:4px;
+}
+
+#interfas .navAdmin .busqueda i{
+    margin-right:14px;
+}
+
+#interfas .navAdmin .busqueda input{
+    border:none;
+    outline:none;
+    font-size:14px;
+}
+
+#interfas .navAdmin .perfil{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#interfas .navAdmin .perfil i{
+    margin-right: 20px;
+    font-size:19px;
+    font-weight:400;
+}
+
+#interfas .navAdmin .perfil img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.i-nombre{
+    color: var(--negorClaro);
+    padding: 30px 30px 0 30px;
+    font-size: 24px;
+    font-weight:700;
+}
+
+.valores{
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.valores .val-box{
+    background: var(--blanco);
+    width: 235px;
+    padding: 16px 20px;
+    border-radius:5px;
+    display:flex;
+    justify-content: flex-start;
+    align-items:center;
+}
+
+.valores .val-box i{
+    font-size:25;
+    width: 60px;
+    height: 60px;
+    line-height:60px;
+    border-radius: 50%;
+    text-align: center;
+    color: var(--blanco);
+    background: var(--azul);
+    margin-right:15px;
+}
+
+.valores .val-box h3{
+    font-size: 18px;
+    font-weight: 600;
+    
+}
+.valores .val-box span{
+    font-size: 15px;
+    color: var(--gris);
+}
+
+.producto{
+    width: 94%;
+    margin: 30px 0 30px 30px;
+    overflow: auto;
+    background: var(--blanco);
+    border-radius: 8px;
+}
+.producto img{
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 30%;
+    margin-right: 15px;
+}
+
+.producto h5{
+    font-size: 14px;
+    font-weight: 600;
+}
+.producto p{
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--negorClaro);
+}
+
+.producto .proDucto{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: start;
+}
+table{
+    border-collapse: collapse;
+}
+tr{
+    border-bottom: 1px solid var(--gris);
+}
+thead td{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 400;
+    background: var(--negorClaro);
+    text-align: start;
+    padding: 15px;
+    color: var(--blanco);
+}
+
+tbody tr td{
+    padding: 10px 15px;
+}
+

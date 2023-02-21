@@ -1,0 +1,45 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: rgba(192, 173, 173, 0.24);
+    font-family:sans-serif; 
+ }
+header nav .container_enlace a{
+    color: #fff;
+    margin-left: 10px;
+    font-size: 17px;
+}
+section form .contenedor_cajas{
+border: 1px solid rgba(204, 204, 204, 0.514);
+padding-top: 30px;
+}
+section form .contenedor_cajas div{
+    margin-bottom: 15px;
+}
+.container .row, h1{
+    text-align: center;
+}
+.container .row p{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.contenedor_btn{
+    margin:20px 0;
+    text-align:start;
+}
+.contenedor_btn button a{
+text-decoration: none;
+color: #fff;
+}
+footer .container_img, a{
+    text-decoration: none;
+}
+
+footer .contenedor_img{
+    text-align:end;
+}
+.ocultar{
+    opacity: 0;
+}
